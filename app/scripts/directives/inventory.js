@@ -40,8 +40,10 @@ angular.module('firebaseApp')
                     return {position: index};
                 }
 
-                for (var i = 0; i < SLOTS; i++) {
-                    scope.slots.push(getEmptySlot(i));
+                function resetList(){
+                    for (var i = 0; i < SLOTS; i++) {
+                        scope.slots.push(getEmptySlot(i));
+                    }
                 }
 
                 function deselectAll() {
@@ -91,6 +93,7 @@ angular.module('firebaseApp')
                     if (typeof val == "string" ){
                         scope.inventoryArray = JSON.parse(val);
                     }
+                    resetList();
                     for (var i = 0; i < scope.inventoryArray.length; i++) {
                         var pos = scope.inventoryArray[i].position;
                         scope.slots[pos] = scope.inventoryArray[i];
