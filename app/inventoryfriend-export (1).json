@@ -1,0 +1,36 @@
+{
+    "users":{
+        "u1" : {
+            "name" : "user 1",
+            "gm" : {
+                "g1" :{
+                    "gameid" : "game no1"
+                }
+            },
+            "player":{
+                "g2" :{
+                    "gameid" : "game no2"
+                }
+            }
+        },
+        "u2" : {
+            "name" : "user 2",
+            "player":{
+                "g2" :{
+                    "gameid" : "game no2"
+                }
+            }
+        }
+    },
+  "messages" : {
+    "-JmDzyhWqlTp3OaffsMM" : {
+      "text" : "messag no1"
+    },
+    "-JmDzzqM91hTeCTIfycG" : {
+      "text" : "messag no4"
+    },
+    "-JmE-3_yaYvsxzIZRQVh" : {
+      "text" : "this is it!"
+    }
+  }
+}

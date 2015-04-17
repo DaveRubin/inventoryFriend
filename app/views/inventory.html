@@ -1,0 +1,42 @@
+<h1>inventory</h1>
+
+<add-item-form
+        slot-to-add-item="slotToAddItem"
+        ng-show="slotToAddItem">
+</add-item-form>
+
+<div class="row">
+
+    <div class="slot col-xs-6 " ng-repeat="slot in slots">
+
+        <a ng-if="slot.name"
+           ng-class="{selected : slot.selected}"
+           ng-click="selectItem(slot.position)" href
+           class="slot-content item">
+
+            <span ng-click="deleteItem()"
+                  ng-if="slot.selected"
+                  class="delete-item glyphicon glyphicon-remove close"></span>
+
+            <div class="image-container">
+                <img src="{{ slot.type | getItemImage }}"/>
+            </div>
+
+            <div class="details">
+                <span>{{slot.name}}</span>
+                <br>
+                <span>stats:{{slot.stats}}</span>
+            </div>
+        </a>
+
+        <a class="slot-content empty-slot" href
+             ng-class="{ready:itemSelected}"
+             ng-click="emptySlotClicked(slot.position)"
+             ng-if="!slot.name">
+
+            <i ng-if="!itemSelected" class="glyphicon glyphicon-plus"></i>
+            <span ng-if="!itemSelected">Add item</span>
+            <span ng-if="itemSelected">Move here</span>
+        </a>
+    </div>
+</div>

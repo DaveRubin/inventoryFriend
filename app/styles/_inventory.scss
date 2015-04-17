@@ -1,0 +1,87 @@
+body {
+  background-color: lightgrey;
+}
+
+.slot {
+
+  padding: 5px;
+  font-weight: bold;
+  height: 100px;
+
+  .slot-content {
+    background-color: #ffffff;
+    text-align: left;
+    display: table;
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+    padding: 15px;
+    color: #000000;
+    text-decoration: none !important;
+  }
+  .empty-slot{
+    text-align: center;
+    line-height: 60px;
+  }
+
+  .empty-slot.ready {
+    background-color: darkseagreen;
+    cursor: pointer;
+    &:hover {
+      background-color: darken(darkseagreen, 20%);
+    }
+  }
+}
+
+.item {
+
+  .delete-item{
+    position: absolute;
+    right: 15px;
+    top: 15px;
+  }
+
+  &.selected {
+    background-color: palevioletred;
+  }
+  .image-container, .details {
+    display: table-cell;
+  }
+
+  .image-container {
+    width: 100px;
+    vertical-align: middle;
+    text-align: center;
+
+    img {
+      width: 55px;
+      max-height: 55px;
+    }
+  }
+}
+
+
+.backdrop{
+  position: fixed;
+  display: table;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  .panel-container{
+    background-color: rgba(black,0.4);
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+  }
+  .panel{
+    background-color: #ffffff;
+    display: inline-block;
+    padding: 15px;
+    text-align: left;
+  }
+  .footer , h2{
+    text-align: center;
+  }
+}
