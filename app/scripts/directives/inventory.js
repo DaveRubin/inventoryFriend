@@ -42,6 +42,7 @@ angular.module('firebaseApp')
 
                 function resetList(){
                     for (var i = 0; i < SLOTS; i++) {
+                        scope.slots = [];
                         scope.slots.push(getEmptySlot(i));
                     }
                 }
