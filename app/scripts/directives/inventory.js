@@ -41,8 +41,8 @@ angular.module('firebaseApp')
                 }
 
                 function resetList(){
+                    scope.slots = [];
                     for (var i = 0; i < SLOTS; i++) {
-                        scope.slots = [];
                         scope.slots.push(getEmptySlot(i));
                     }
                 }
@@ -95,6 +95,7 @@ angular.module('firebaseApp')
                         scope.inventoryArray = JSON.parse(val);
                     }
                     resetList();
+                    console.log(scope.inventoryArray);
                     for (var i = 0; i < scope.inventoryArray.length; i++) {
                         var pos = scope.inventoryArray[i].position;
                         scope.slots[pos] = scope.inventoryArray[i];
